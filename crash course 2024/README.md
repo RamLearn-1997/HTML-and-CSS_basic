@@ -11,10 +11,13 @@ project
 ### here the my effort or result by following this course
 
 ![Desktop-Version](assets/desktop.PNG)
+
 *Desktop Version*
 
 ![Mobile-1-Version](assets/mobile1.PNG)
+
 *Mobile 1 Version*
 
 ![Mobile-2-Version](assets/mobile2.PNG)
+
 *Mobile 2 Version*
