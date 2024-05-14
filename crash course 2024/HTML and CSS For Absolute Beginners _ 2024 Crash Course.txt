@@ -1,0 +1,90 @@
+What is a frontend dev ?
+==> A person who proficient to utilise html, css and js. they have given layout by UX/UI to work on.
+
+Now Think like 
+HTML --> HTML is skeletal
+CSS --> CSS is skin
+JAVASCRIPT --> JAVASCRIPT is Logic/Brain
+
+
+Code Editor --> VS Code
+
+Download all image assets and create index.html file for main html Code
+
+open index.html with liver server extension
+
+css can be written in inline and external file link
+
+now understand the structure of the design we have given
+-> mostly it is in rectangle or container
+
+for our purpose we have semantic tag for particular part of design
+
+now take look at navbar
+ we have two part or rectangles
+    1. it consist of three part : logo, divider and Home link --> we will create class called header-left
+    2. it consist of four part : our food link, ingredients link,studies link and FAQ link --> we will create class called header-right in nav
+
+
+now take look at main hero section
+basically it comprise of heading, para/body text, CTA button and a hero image 
+
+as the html get over then wrap all the html within class called wrap
+
+-----
+now focus on the CSS 
+understand the rule set -- structure
+  selector {
+     property-name: value;
+  }
+
+  above structure is rule set
+
+  
+  selector : it can be element or class
+  property-name: it can be property that has given to selector
+  value : it can be value of the property that has given to selector
+
+  reference class in rule-set: before class name add "."
+     --> .class {
+         property-name: value;
+     }
+
+  reference id in rule-set: before id name add "#"
+     --> #id {
+         property-name: value;
+     }
+
+
+margin => it will give the spacing outside around the element of html
+padding => it will give the spacing inside around the element of html
+
+to change the font we have to use google font for whole html file
+-> import the embed by link in html file or import in css file
+-> add the font property in rule-set
+     font-family: 'font-name', default-font-name; 
+
+
+now css will work on parent - children nesting
+
+dev tools in chrome
+
+css unit --> absolute and relative unit
+
+z-index --> majorly stack the position according to given number -- highest number means top of all other element and lowest number means below of all other element
+
+focus on the main content
+
+after main content focus media queries for desktop and mobile
+
+-----
+
+Now Look at JAVASCRIPT
+link --> script file
+<script src="script.js"></script>
+create all variable for closing and opening button
+add eventlistener on click of opening and remove eventlistener on clicking closing 
+
+#note: use emit to get faster
+
+Timestamp : 01:58:04
