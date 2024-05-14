@@ -1,7 +1,7 @@
 # HTML and CSS For Absolute Beginners - 2024 Crash Course
 
 ```
-This course is created by garry simon take little basic of 
+This course is created by gary simon take little basic of 
 html, css and javascript this course is fun and help us 
 to build basic understanding about frontend by an interactive
 project
