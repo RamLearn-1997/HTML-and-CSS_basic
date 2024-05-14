@@ -1,0 +1,161 @@
+Let focus on some basic of html, and css before building layout design
+
+HTML --> Hyper Text Markup Language
+HTML Anatomy
+<div class="container"></div>
+
+1. opening tag
+2. element --> inside opening and closing tag:
+               head, body, section, strong, h1, 
+               p, main, header, footer, nav and
+               many more ...
+3. attribute --> inside opening tag: class, id,
+                 style, lang, ref, href, title,
+                 alt, src and many more ...
+4. self closing tag --> <img src="some.jpg" alt="sone image" /> or 
+                        <img src="some.jpg" alt="sone image" >
+5. Closing tag
+
+--- *** ---
+
+CSS --> Cascading Styling Sheet
+CSS Anatomy
+Rule set --> .container {
+               |   background: red; ----> properties: value;
+               |   font-size: 1.3em;
+               |  }
+               |
+            selector
+
+1. selector --> it can be the class name, id or element 
+2. declaration({}) --> the curly braces after selector
+3. properties --> it is within declaration of the element which has property
+4. value --> within declaration after property we have value
+5. unit --> some properties value have unit with them
+            we have two unit i.e. absolute and relative 
+
+Now let start with development
+
+open vs code editor (if you don't have download it)
+
+open vs in the project folder
+
+1. add "!" for html boilerplate
+and then add link for css file
+
+2. Create a css file and you can also 
+add style tag for internal css styling
+
+3. install live server plugin for running 
+html file in browser through localhost
+
+
+Now we need refer the design in figma or other designing tool set the html structure for our css
+->1. think your design is wrap in the big rectangle so we will create a class called wrapper where all element is container
+2. now let focus on the next element which is navigation so we will create a header so that we separate the two element i.e. logo and navigation link
+3. let focus navigation --> logo is clickable so we need a anchor tag within that tag we will use img tag and then we need look at the link which will in the nav tag within that tag we will have underordered list and inside we will have list tag with anchor tag 
+4. let focus on main content --> so we create a sematic tag called "main" within that we will create two column - first column is for content and second is for images
+5. let focus on left-column of the content --> first we have heading which comes under heading 1/h1 tag.
+next we have subheading which comes under paragraph/p tag
+next we will create button-containers for all buttons or link 
+next we will focus on the message container that announce message about employment with two element i.e. number of employee and message
+6. left focus on right-column of the content -->we create card class then we will create card1, card2, and card3 class respectively after card class for setting different images.
+next within each card class we have card-details which contain 3 thing frist is link for product and then some text finally price of the product.
+7. That's it for html structure next we will focus on css 
+--***--
+
+now add all css property to the html structure 
+-> 1. first of add font-size of html selector to 62.5% to make conversion easier.
+2. now change the margin of body to zero and add google font link to html head tag then add font-family to poppins in body selector
+3. setting wrapper a max-width to 1200px then we need to align item center by making margin to zero auto
+4. now let's work on navbar -- so we have two element for the navbar so first we work on container the navigation bar now display will flex, justify-content will be space-between and align-items will be center for spacing of navbar.
+5. now we have focus on second element of navbar that is nav which contain nav links so we will margin of 4em unit to the nav after that we will focus on ul to disappear the bullet point in the list by property called list-style-type to none then we will give display flex and gap of 4.1em unit and also remove some additional margin by giving margin value to zero finally we have focus on anchor selector by giving the following properties --> text-decoration will be none, color will be black, text-transform will be uppercase and font-size of 1.6rem unit
+6. now we take look at active class for that we need give position relative to the nav anchor selector then we will use pseudo selector for the  active class we will give the following properties --> position will be absolute, content will empty, width will be 35%, height will 1px, border-bottom will be 2px solid black and bottom of -4px
+7. now we have main section which contain two column for our contents so we will give properties of following --> display will flex, gap will be 8em unit and margin-top will be 11em unit.
+8. now we will focus left-column which contain content so we will give the following properties to the left-column --> width of 45% 
+9. now will go within left-column to target the other element within so following properties of 
+  i. h1 --> font-size will be 5.2rem units, margin will be zero font-family will be playfair display and font-weight will be normal
+  ii. .subhead --> font-size will 1.8rem unit
+  iii. .cta-btns --> display will be flex, gap of 2em units and separatly give the margin of 5em top-bottom and zero left-right
+         iii.a) .primary-cta --> background-color will be #f1e2d1,font-size     will be 1.8rem unit, font-weight will be bold, color will be black, text-decoration will be none, border-radius of 1.9em units, and padding will be 1em from top-bottom and 2em from left-right 
+         iii.b) .secondary-cta -->  so we set the same of .cta-btns then we will further properties - font-size will be 1.8rem unit, text-decoration will be none, color will be black, padding will be 1em top-bottom and 0 from left-right.
+   iv. .news --> display will be flex, gap of 3em units, padding of 5em units, border will be 1px solid black and border-radius will be .8em units
+       iv.a) .employee --> font-size of 3.3rem, margin will be zero, font-weight will be 200, and  line-height to 100% 
+       iv.b) .details --> font-size of 1.4rem and margin will be zero
+10. before we go to right-column we have to give flex-grow to 1 to have full width, now will go within right-column to torget the other element within so following properties of 
+     I. right-col --> display will grid, gap of 2.3em unit, grid-template-column of repeat(2,auto) and grid-template-areas of "left ." "left ." ; now add grid-area to card1 to left
+     II. .card -->  border-radius will be .8em unit,padding will be 1.1em unit, display will be flex, align-items will be end and background-size will be 130% 
+     III. .card1,card2,card3 --> background-image will be the respectively called image via url
+     IV. .card-details --> background will be white, border-radius will be .6em,padding will be 2em unit, width will be 100%, display will be flex, align-items will be center and justify-content will be space-between
+     V. .card-details a --> color will be black,text-decoration will be none,font-size will be 1.6rem, and font-weight will be bold.
+     VI. .card-details p --> font-size will be 1.4rem unit and margin will be 0
+     VII. p.product-price --> font-size will be 1.8rem unit
+--***--
+
+now we all done will our css value now we will focus on css animation
+    1.navigation hover state
+      so we'll create our new rule set which is 
+        nav ul li a:before{
+            position: absolute;
+            content: '';
+            width: 0%;
+            height: 1px;
+            border-bottom: 2px solid black;
+            bottom: -4px;
+            transition: width .3s
+        }
+        then we will add hover rule set
+        nav ul li a:hover:before{
+               width: 35%;
+        }
+
+    2. button primary 
+       .primary-cta:hover{
+          background: #e2d1bd;
+       }
+
+    3. animation on card
+       .card{
+           /* rest code */
+          transition: background-size 800ms
+       }
+
+       .card:hover{
+         background-size: 160%;
+       }
+
+       .card-details{
+         /* rest of code */
+          transition: transform 800ms
+       }
+
+       .card .card-details:hover{
+            transform: translateY(-20px);
+       }
+
+let put some quick overlay or intro animation
+creating a class of overlay on top of the wrapper class
+--> <div class="overlay"></div>
+--> .overlay{
+    position: absolute;
+    z-index: 999;
+    background: white;
+    width: 100%;
+    height: 100%;
+    animation: reveal 1s ease-in forwards;
+    transform-origin: bottom ;
+  }
+--> @keyframes reveal{
+     from{
+         transform: scaleY(1);
+     }
+     to{
+         transform: scaleY(0);
+     }
+   }
+
+#note : 1.use emmet for faster work
+        2.use rem for the font-size and em for the other alignment of the elements
+
+
+TimeStamp : 02:09:27
