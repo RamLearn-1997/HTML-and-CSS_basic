@@ -1,0 +1,260 @@
+Frontend developer work on the Design provided by the UI/UX Designer
+
+HTML Structure
+  - HTML Element
+      <div class="hey"></div>
+    opening tag ---<div class="hey"></div>---closing tag
+    self closing --- <img/>
+    let's breakdown
+      <div class="hey">sup</div>
+      - here div is the element and class is the attribute which has value 
+      - between the opening and closing there is content
+    - Tree Structure 
+        <html>
+           <head>
+              stuff is here
+           </head>
+           <body>
+              more stuff is here
+           </body>
+        </html>
+
+CSS Structure
+   - Ruleset
+      .hey{
+         background: blue;
+         font-size: 1em;
+      }
+      - let's break it down
+         .selector --> it can be element, class and id which referenced for html document
+         ({}) --> contain the properties and value for the selector
+         Declaration :
+         property-name --> it is the attribute of selector
+         value --> different property-name have different value with some css unit
+       
+Downlaod VS code
+Extension : live server
+
+First Begin with,
+-->create index.html file then prepare you css folder and link to the html file
+but we are using scss/sass for project now install 2nd extension called live sass.
+--> we will only use one feature of sass that is nesting
+--> Look at design file at figma provided by Designer
+
+
+let start coding -- HTML
+1. create a wrapper class for main container
+2. we will add image through reference div class called hero-img
+3. so now we will target the navigation bar which contain two element first is logo and other is links
+  - for navigation we have sematic tag call header tag
+  - first element of navbar is logo for that we will use anchor tag for the purpose of navigating to home page or all together differnt website.
+  - now let focus on the second part of navbar that is navgation link so we use nav sematic tag used as wrapper & within wrapper unorderd list for our navigation and within ul we will have anchor tag for our all link.
+4. let focus Hero section of website which have heading, body text with class subhead and one arrow line downward 
+5. next will be more-info that we have to break it down into 3 row and each row having two column
+   - each row have two element first is content and other is image 
+   - second is alternate where image is on right and content is on left so will give additional class name left
+   - in our content part we have title and body text
+   - last we have images in img tag
+
+
+Now let code --- CSS
+  our approach is mobile first 
+1. let give body a margin of 1.5em unit and fonts from google fonts
+2. next will target all anchor tag and remove the text-decoration and add font-size of 1.3rem unit
+3. now let work hero image which top out of wrapper class so we will give the following value
+--> background property => url of the image with rgba, background-blend-mode to multiply, image size to cover, image postion x and y to 20%; then we will give position of absolute with top and left zero; z-index to -1 and finally giving width of 100% and height of 100vh
+4. now let target the header with following properties --> display is flex and justify-content is space-between
+    . let target our logo which have two font-weight of bold and text-color of white
+    . let target menu icon in header which is svg so following value will be --> width of 3em, margin-top of -.6em, and cursor will be pointer
+    . and make nav element display none(for mobile)
+5. now looking the hero section let's breakdown hero section one by one 
+    . first we will give color of white and height of 90vh to the hero section
+    . then we will target svg element to change color from black to white by changing stroke and fill; make width 1em unit, position to absolute with bottom of 2em unit
+    . next will target heading with following properties of --> font-size of 3rem unit, margin-top of 2em unit and line-height of 1em.
+    . Now we will target the subhead with following value --> font-size of 1.4rem units
+6. now work on the navigation which was display none so the following value --> position will be fixed with right and top will be zero, background will be white, height of 100vh along with width of 50%, z-index of 2.
+   . within nav we will target the following 
+      I. ul --> list-style-type is none, padding will be zero and margin-top will be 8em unit
+      II. a --> color will be black, padding will be .75em from top to bottom and 2em from left to right and display will be block.
+      III. a:hover --> background of rgb(226, 224, 224)
+      IV. .close(svg) --> float will be right with margin of 2em unit and width of 2.5em unit
+      V. on nav will give transform of translateX(100%) and adding transition on transform with .3s duration of ease-in-out
+7. now let focus on the more-info section we need target major element in more-info section so let begin --> i. img --> width will be 100%, object-fit will be cover and height will of 11em    unit.
+ii. title --> font-size of 1.25rem unit and font-weight of bold
+iii. desc --> line-height of 1.5rem
+8. now let work with media queries
+   a. at min-width of 680px
+       @media only screen and (min-width:680px){
+          body{
+            margin: 1.5em 5em;
+            font-family: "Noto Sans", sans-serif;
+          }
+       }
+    b. at min-width of 920px
+      @media only screen and (min-width: 920px) {
+       .menu {
+         display: none;
+       }
+
+        nav {
+            transform: translateX(0);
+            width: auto;
+            height: auto;
+            position: unset;
+            display: block;
+            background: none;
+            height: auto;
+
+            svg.close {
+            display: none;
+            }
+
+            ul {
+            display: flex;
+            margin: 0;
+
+            a {
+                padding: 0.5em 1.5em;
+                color: white;
+                font-size: 0.9rem;
+
+                &:hover {
+                background: none;
+                text-decoration: underline;
+                }
+            }
+            }
+        }
+
+        .hero-img{
+            left: unset;
+            right: 0;
+            width: 50%;
+            height: 42em;
+        }
+
+        .logo{
+            color: black;
+
+            span{
+                color:#014BC3 ;
+            }
+        }
+
+        section.hero{
+            color: black;
+            height: auto;
+            width: 40%;
+            margin-bottom: 8em;
+
+            
+
+            svg {
+                stroke: black;
+                position: unset;
+                margin-top: 2em;
+            
+                path {
+                fill: black;
+                }
+            }
+        }
+
+        .feature{
+            display: grid;
+            grid-template-columns: repeat(2,auto);
+            gap: 3em;
+            margin-bottom: 8em;
+
+            img{
+                width: 25em;
+            }
+
+            .content{
+                text-align: right;
+                width: 25em;
+                justify-self: left;
+            }
+        }
+
+        .feature.left{
+            grid-template-areas: "left right" ;
+
+            img{
+                grid-area: left;
+            }
+
+            .content{
+                text-align: left;
+                width: 25em;
+            }
+        }
+    }
+   c. at min-width of 1200px
+       @media only screen and (min-width: 1200px) {
+
+    .wrapper{
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    feature{
+        gap: 0;
+    }
+  }
+9. adding some animation to the 
+   a.hero-image
+     first thing at add animation property in .hero-img
+      hero-img{
+        /* rest code */
+        animation: introload 2s forwards
+      }
+    then 
+      @keyframes introload{
+         from{
+            clip-path: polygon(0 0,100% 0, 100% 0, 0 0);
+         }
+         to{
+            clip-path: polygon(0 0,100% 0, 100% 100%, 0 100%);
+         }
+      }
+    b.down-arrow
+      first thing at add animation property in .down-arrow
+       .down-arrow{
+        /* down-arrow rest code */
+        animation: movearrow 1s alternate-reverse infinite;
+       }
+     then
+       @keyframes movearrow{
+    from{
+      transform: translateY(-30px);
+    }
+    to{
+        transform: translateY(0);
+    }
+   }
+   c.in hero section
+      first thing at add animation property in section.hero
+       section.hero{
+        /* down-arrow rest code */
+        animation: movedown 1s ease-in-out forwards;
+       }
+     then
+       @keyframes movearrow{
+    from{
+      transform: translateY(-100px);
+    }
+    to{
+        transform: translateY(0);
+    }
+   }
+
+Now let do some javascript
+  1. create all varaible for eventlistener to the navigation
+  2. adding a eventlistener on menu icon
+  3. removing an eventlistener on close icon
+
+
+
+
+Timestamp : 01:58:40

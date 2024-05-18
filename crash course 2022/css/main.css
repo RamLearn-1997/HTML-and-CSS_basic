@@ -1,0 +1,241 @@
+/**/
+body {
+  margin: 1.5em;
+  font-family: "Noto Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../images/hero.jpg) rgba(59, 56, 58, 0.6);
+  background-size: cover;
+  background-position-x: 20%;
+  background-position-y: 20%;
+  background-blend-mode: multiply;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  animation: introload 2s forwards;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+}
+
+nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: white;
+  height: 100vh;
+  width: 50%;
+  z-index: 999;
+  text-transform: uppercase;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+nav .close {
+  float: right;
+  margin: 2em;
+  width: 2.5em;
+  cursor: pointer;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 8em;
+}
+nav ul a {
+  color: black;
+  padding: 0.75em 2em;
+  display: block;
+}
+nav ul a:hover {
+  background: rgb(226, 224, 224);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header .menu {
+  width: 2.5em;
+  margin-top: -0.6em;
+  cursor: pointer;
+  stroke: white;
+}
+
+section.hero {
+  color: white;
+  height: 90vh;
+  animation: movedown 1s ease-in-out forwards;
+  opacity: 0;
+}
+section.hero h1 {
+  font-size: 3rem;
+  margin-top: 2em;
+  line-height: 1em;
+}
+section.hero .subhead {
+  font-size: 1.4rem;
+  margin-bottom: 1.5em;
+}
+section.hero svg {
+  stroke: white;
+  position: absolute;
+  bottom: 2em;
+  width: 0.22em;
+  margin-bottom: 4em;
+  animation: movearrow 1s alternate-reverse infinite;
+}
+section.hero svg path {
+  fill: white;
+}
+
+.more-info .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.more-info .desc {
+  line-height: 1.5rem;
+}
+.more-info img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 11em;
+}
+
+.open-nav {
+  transform: translateX(0%);
+}
+
+@media only screen and (min-width: 680px) {
+  body {
+    margin: 1.5em 5em;
+    font-family: "Noto Sans", sans-serif;
+  }
+}
+@media only screen and (min-width: 920px) {
+  .menu {
+    display: none;
+  }
+  nav {
+    transform: translateX(0);
+    width: auto;
+    height: auto;
+    position: unset;
+    display: block;
+    background: none;
+    height: auto;
+  }
+  nav svg.close {
+    display: none;
+  }
+  nav ul {
+    display: flex;
+    margin: 0;
+  }
+  nav ul a {
+    padding: 0.5em 1.5em;
+    color: white;
+    font-size: 0.9rem;
+  }
+  nav ul a:hover {
+    background: none;
+    text-decoration: underline;
+  }
+  .hero-img {
+    left: unset;
+    right: 0;
+    width: 45%;
+    height: 37em;
+  }
+  .logo {
+    color: black;
+  }
+  .logo span {
+    color: #014BC3;
+  }
+  section.hero {
+    color: black;
+    height: auto;
+    width: 40%;
+    margin-bottom: 8em;
+  }
+  section.hero svg {
+    stroke: black;
+    position: unset;
+    margin-top: 2em;
+  }
+  section.hero svg path {
+    fill: black;
+  }
+  .feature {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 3em;
+    margin-bottom: 5em;
+  }
+  .feature img {
+    width: 25em;
+  }
+  .feature .content {
+    text-align: right;
+    width: 25em;
+    justify-self: left;
+  }
+  .feature.left {
+    grid-template-areas: "left right";
+  }
+  .feature.left img {
+    grid-area: left;
+  }
+  .feature.left .content {
+    text-align: left;
+    width: 25em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  feature {
+    gap: 0;
+  }
+}
+@keyframes introload {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@keyframes movearrow {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes movedown {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=main.css.map */
