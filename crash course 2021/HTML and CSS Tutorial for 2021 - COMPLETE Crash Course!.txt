@@ -1,0 +1,338 @@
+Code Editor : VS code Editor
+
+install extension : live server
+                    live sass compiler
+
+setup all files
+--> create a index.html file use emmet for the html structure
+--> create a css folder and create a main.scss file
+--> link main.css to html file
+
+we will take mobile first approach
+
+we need to look at design
+
+let code --> HTML structure
+->navbar
+1. create a navbar class which contain the other element
+2. inside navbar we will create a container for value inside it
+   i. we will create logo in the link tag with text and span
+   ii. then we will create nav tag inside we will create two ul tag for 
+       two navigation
+         a. first ul with class name primary-nav which is in center
+         b. second ul with class name secondary-nav is in the end
+   iii. add menu icon between logo and nav in img tag with class name of mobile-menu and id of mobile-open
+   iv. inside nav add close icon with class name mobile-menu-exit and id of mobile-exit
+->Hero Section
+1. create a section with class name of hero 
+2. inside hero we will create a container for all element of hero section
+   i. create left-col div which contain all content of the hero section
+       a. we will have p tag with class of subhead
+       b. we will have h1 tag for main heading 
+       c. we will have container of class name hero-cta which contains two btn
+          c.i. we have anchor tag for primary-button with class primary-cta
+          c.ii. we have anchor tag for watch-video-button with class watch-video-cta
+   ii. on right side we will have a img tag with class name of hero-img which contain our hero image or illustration
+->Features section
+1. create a section with class name of features-section
+2. inside features-section we will create a container for all element of features-section
+   i. we will use underordered list tag for describing feature of the app
+   ii. we will use img tag for the features-section
+->Testimonials section
+1. create a section with class name of testimonials-section
+2. inside testimonials-section we will create a container for all element of testimonials-section 
+   i. container will have ul tag and inside the we have li tag
+   ii. each li tag will have three element 
+        ii.a. we have img tag for the person image
+        ii.b. we have blockquote tag for the review text
+        ii.c. we have cite tag for person name
+->Contact section
+1. create a section with class name of contact-section
+2. inside contact-section we will create a container for all element of contact-section 
+  i. we will have contact-left class container for the form elements
+     i.a. h2 tag for the contact text
+     i.b. we will have form 
+        b.I. we will label tag and input tag of type text with id and name will be name 
+  ii. we will have contact-right were we will embed the google map
+
+
+let code --> CSS structure
+->body
+  1. background color to #f2f2f2
+  2. margin will be zero
+  3. importing open sans font-family in the body
+->.navbar
+  1. background color to white
+  2. padding will be 1em unit
+  3. within navbar we have logo
+      i. text-decoration will be none
+      ii. color will be black
+      iii. font-weight will be bold
+      iv. font-size will be 1.2em unit
+      v. then we target the span we will give color of #007AF3
+  4. make nav tag to display none for the mobile version
+  5. targeting container inside the navbar class 
+      i. display will be flex
+      ii. place-content will be space-between
+  6. targeting the svg of menu 
+      i. width of 25px
+      ii. cursor will be pointer
+->targeting specific part
+  1. targeting anchor tag - color of #444444 
+  2. targeting all ul tag - 
+      i. list-style-type will be none 
+      ii. margin and padding will be zero
+  3. section will be have some specific properities -
+      i. padding will be 5em top-bottom and 2em left-right
+->.hero
+  1. text-align will be center
+  2. will target the left-col for the content -
+       i. subhead class will have following properities -> font-weight will be bold, color will be gray, text-transform will be uppercase and letter-spacing of .2em unit 
+       ii. h1 will have following properities -> font-size will be 2.5em unit, line-height will be 1.3em unit and margin-top will be .2em unit
+       iii. .hero-cta will have properities -> display will be flex and flex-direction will column
+       iv. within hero-cta will have primary-cta and watch-video-cta so 
+           . primary-cta will have following properities -> background will be #007AF3, text-decoration will be none, color will be white, padding will .6em unit on top-bottom and 1.3em unit on left-right, font-size will be 1.3em unit, border-radius will 5em unit and font-weight of bold 
+           . watch-video-cta will have properities -> display will be block and margin-top will be 1em unit with this we have img of video camera then properities will be ->
+                img{
+                    margin-right: .5em;
+                    margin-bottom:  -5px;
+                    width: 20px;
+                }
+      v. let target will get the hero image with class .hero-img properities will be -> width of 70%, margin-top will 3em unit and box-shadow value will be of [10px 3px 5px lightblue]
+->features-section 
+  1. making bg color of feature section to #20272e, text color to white
+  2. now we will target the ul with class name of features-list -> 
+     margin of zero, padding-left will be .1em unit, and display will be grid with grid-template-columns of repeat(auto-fit, minmax(19rem, 1fr)).
+     within features-list class we have li tag then will have properities of -> font-size of 1.1em unit, margin-bottom will be 1em unit, margin-left will be 2em and position of relative then we will use checkmark place using pseduo selector within li -> &:before{
+            content: '';
+            left: -2em;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url(../images/green\ tick.svg);
+            background-size: contain;
+            margin-right: .5em;
+        }  
+   3. in mobile version we need to get rid of img so properities will be -> display will be none
+-> testimonials-section
+  1. set the background of the section to #007AF3
+  2. within section we will target the li --> set the background to #006bd6, text-align to center, padding will be 2em unit to top-bottom and 1em unit to left-right, width of 80%, margin value will be [0 auto 5em auto],border-radius of 1em unit and text color of white 
+  3. within li we profile image so we will have properities of --> width of 5em,height of 5em, border of 5px solid #006bd6 with border-radius of 50%, margin-top of -4.5em unit
+-> contact-section
+  1. we will target some specific inside contact Section
+     i. h2 -> font-size of 2em unit
+     ii. label -> display will be block, font-size will be 1.2em and margin-bottom will be .5em unit
+     iii. input, textarea --> width will be 100%, padding will be .8em unit, margin-bottom will be 1em, border-radius of .3em unit and border will be 1px solid gray and box-sizing will be border-box
+     iv. input[type='submit'] -> background will be #007AF3, color will be white, font-weight will be bold, font-size will be 1.3em unit, border will be none, margin-bottom will be 5em, border-radius will be 5em, display will be inline-block, padding will be .8em from top-bottom & 2em from left-right, width will be unset and cursor will be pointer
+     v. iframe -> width of 100% and height of 300px
+--> creating navbar for the mobile
+    1. so we will target the nav with class name of menu-btn --> display will be block
+    2. now target the nav to set the all element --> position will be fixed with right and top will be zero, z-index will be 999, width of 66%, background will #20272e, height of 100vh and padding will 1em unit
+    3. now within nav we have ul so we will give margin-top of 5em unit
+    4. let focus on the li element within ul --> 
+       li{
+        a{
+            color: var(--text-white);
+            text-decoration: none;
+            display: block;
+            font-size: 1.3em;
+            padding: .5em;
+            text-align: right;
+
+            &:hover{
+                font-weight: bold;
+            }
+        }
+      }
+   5. then we need to focus on the close icon with class name mobile-menu-exit --> float will be right,margin will be .5em and cursor will be pointer
+
+now let us focus on some javascript
+--> 1. create a all variable for menu
+    2. create eventlistener that add event
+    3. create eventlistener that remove event
+
+now adding media queries for desktop version
+--> For Tablet Device
+@media only screen and (min-width: 768px){
+
+    .mobile-menu,.mobile-menu-exit{
+        display: none;
+    }
+
+    .navbar .container{
+        display: grid;
+        grid-template-columns: 180px auto;
+        justify-content: unset;
+    }
+
+    .navbar nav{
+        display: flex;
+        justify-content:space-between;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+
+        ul{
+            display: flex;
+        }
+         
+        a{
+            color: var(--bg-feature1);
+            font-size: 1em;
+            padding: .1em 1em;
+        }
+
+        ul.primary-nav{
+            margin: 0;
+        }
+
+        li.current a{
+            font-weight: bold;
+        }
+
+        li.go-premium-cta a{
+            border: 3px solid var(--primary-color);
+            background: none;
+            color: var(--primary-color);
+            border-radius: 5em;
+            font-weight: bold;
+            margin-top: -.2em;
+
+            &:hover{
+                background-color: var(--primary-color);
+                color: var(--text-white);
+            }
+        }
+    }
+} 
+--> For desktop over width of 1080px
+@media only screen and (min-width: 1080px){
+   .container{
+     width: 1080px;
+     margin: 0 auto ;
+   }
+
+   section{
+     padding: 10em 4em;
+   }
+
+   .hero .container{
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+
+      .hero-img{
+        width: 30%;
+        margin-right: 8em;
+     }
+
+      .left-col{
+         margin: 3em 3em 0 5em;
+
+         
+         h1{
+            font-size: 3em;
+            width: 90%;
+         }
+
+         
+
+         .hero-cta{
+            flex-direction: row;
+
+            .primary-cta{
+                margin-right: 1em;
+                padding: 1.3em;
+                font-size: 1em;
+                margin-top: 2em;
+            }
+         }
+      }
+   }
+
+   .features-section{
+     position: relative;
+
+    img{
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 350px;
+        bottom: -2em;
+        filter: grayscale(1);
+    }
+
+    ul.features-list{
+        display: block;
+        margin-left: 5em;
+   
+         li{
+            font-size: 1.4rem;
+   
+            &:before{
+               width: 30px;
+               height: 30px;
+            }
+         }
+      }
+   }
+
+   .testimonials-section{
+      ul{
+         display: flex;
+
+         li{
+             margin: 0 1em;
+         }
+      }
+   }
+
+   .contact-section {
+     position: relative;
+
+     .container{
+         display: flex;
+     }
+
+     .contact-right{
+         position: absolute;
+         right: 0;
+         top: 0;
+         width: 45%;
+         height: 100%;
+
+         iframe{
+             height: 100%;
+         }
+     }
+   }
+    
+}
+--> for desktop over 1500px
+@media only screen and (min-width: 1500px){
+
+    .features-section{
+
+        &:before{
+            content:'';
+            position: absolute;
+            width: 10%;
+            height: 20em;
+            background: var(--primary-color);
+            left: 0;
+            top: -4em;
+        }
+    }
+}
+    
+         
+
+
+
+
+#note : use emmet for faster work
+
+
+Timestamp : 02:13:15
