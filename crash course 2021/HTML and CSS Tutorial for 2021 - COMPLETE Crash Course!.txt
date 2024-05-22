@@ -335,4 +335,4 @@ now adding media queries for desktop version
 #note : use emmet for faster work
 
 
-Timestamp : 02:13:15
+Timestamp : 02:17:48
