@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Landing Page</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <h3>Searching Now ...</h3>
+    </div>
+    <div class="hero-bg">
+        <section class="top">
+            <header>
+                <a href="#">yummy.eats</a>
+            </header>
+           <h1><span>The Healthy</span> Eating Experience</h1>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis perferendis illo nobis quidem voluptate excepturi quo minus provident exercitationem eligendi.</p>
+           <div class="form-container">
+             <form action="">
+                <div class="form-left">
+                <label for="city">Enter Your City: </label>
+                <input type="text">
+                <p>Example: "Delhi"</p>
+                </div>
+                <input type="button" value="Find Food Now" id="cta-btn">
+             </form>
+           </div>
+        </section>
+        
+    </div>
+    <section class="authentic">
+       <div class="right-col">
+          <h2>Authentic. Wholesome.</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus totam magni obcaecati natus quo fugiat a officiis earum exercitationem! Architecto! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum obcaecati maxime, blanditiis itaque deleniti ducimus?</p>
+       </div>
+       <img src="/images/momo.jpg" alt="momo images">
+    </section>
+
+    <script>
+     
+        let btn = document.getElementById('cta-btn');
+        let overlay = document.getElementById('overlay');
+
+        btn.addEventListener('click', () => {
+           overlay.style.display = 'grid';
+           overlay.classList.add('animate-overlay')
+        })
+     
+
+    </script>
+</body>
+</html>

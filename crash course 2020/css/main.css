@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+
+:root{
+   --text-color: white;
+   --label-color: #153743;
+   --input-text-border: #707070;
+   --form-p-text: gray;
+   --form-btn-color: #d5b82a;
+}
+
+body{
+    font-family: "Mukta", sans-serif;
+    margin: 0;
+}
+
+section{
+    margin: 0 1em;
+}
+
+/* hero section */
+.hero-bg{
+    background: url(../images/lemon1.jpg) rgba(59, 56, 58, 0.6);
+    background-blend-mode: multiply;
+    background-position: 50% 83%;
+    color: var(--text-color);
+    text-align: center;
+    padding-bottom: 4em;
+}
+
+header{
+    padding: 1em 0;
+}
+
+header a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+h1{
+    font-size: 2.5rem;
+    margin: 2em 0 1.2em;
+}
+
+h1 span{
+    font-size: 1.5rem;
+    display: block;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+h1 span::before{
+    content: '';
+    width: 3em;
+    height: .4em;
+    background: var(--form-btn-color);
+    bottom: 8px;
+    position: absolute;
+    z-index: -1;
+    margin-left: -.3em;
+}
+
+.hero-bg p{
+    font-weight: 700;
+    margin: 0 1em 3em;
+}
+
+.form-container{
+    background-color: var(--text-color);
+    margin: 2em -1em 0;
+    padding: 2em;
+}
+
+label{
+    color: var(--label-color);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+input[type=text]{
+    border: 1px solid var(--input-text-border);
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: .5em;  
+    margin-top: 1.2em;         
+}
+
+.form-container p{
+   color: var(--form-p-text);
+   margin-bottom: 1.5em;
+   font-weight: normal;
+   font-size: .9em;
+   margin-top: .3em;
+}
+
+input[type=button]{
+      background-color: var(--form-btn-color); 
+      border: none;
+      width: 100%;
+      color: var(--text-color);  
+      font-weight: 700;
+      padding: 1em 0;
+      border-radius: .5em;   
+      font-size: 1.1em;
+      cursor: pointer;      
+}
+
+input[type=button]:hover{
+    background-color: #ae7916; 
+ }
+
+/* authentic section */
+.authentic{
+    margin: 0;
+}
+
+img{
+    width: 100%;
+}
+
+.right-col{
+    text-align: center;
+    margin: 3em 1em;
+}
+
+h2{
+    text-transform: uppercase;
+    position: relative;
+}
+
+h2::before{
+    content: '';
+    width: 8em;
+    height: .4em;
+    background: #E36B5E;
+    bottom: 8px;
+    position: absolute;
+    z-index: -1;
+    margin-left: -.3em;
+}
+
+.right-col p{
+    line-height: 2em;
+}
+
+
+/* overlay */
+.overlay{
+       position:absolute;
+       height: 100vh;
+       width: 100%;
+       background: rgba(0,0,0,.9);
+       color: var(--text-color);
+       z-index: 1;
+       place-content: center;
+       display: none;
+       opacity: 0;
+}
+
+.animate-overlay{
+    animation: overlay 3s forwards ;
+}
+
+@keyframes overlay{
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+    
+}
+
+/* media queries */
+@media (min-width: 730px){
+    
+    section{
+        margin: 0 4em;
+    }
+
+    .form-container{
+        margin: 2em -4em 0;
+    }
+
+}
+
+@media (min-width: 930px){
+    
+    .hero-bg{
+        text-align: left;
+    }
+
+    .hero-bg p{
+        margin: 0 0 3em;
+    }
+
+    .hero-bg section{
+        width: 65%;
+    }
+
+    .form-container{
+        margin: 2em 0 0;
+        padding: 2em;
+        box-shadow: 10px 10px 10px rgba(124, 124, 124, 0.3);
+        border-radius: .5em;
+    }
+
+    form{
+        display: flex;
+    }
+
+    .form-left{
+        width: 70%;
+    }
+
+    label{
+        margin-bottom:0;
+    }
+
+    input[type=button]{
+        height: fit-content;
+        font-size: 1.1em;
+        margin-left: 1em;
+        margin-top: 2.7em;
+        padding: .7em 0;
+        width: 30%;
+    }
+
+    .hero-bg p{
+        margin-bottom: 0;
+    }
+
+    section.authentic{
+        display: grid;
+        grid-template-columns: repeat(2,50%);
+        grid-template-areas: "bowl content";
+    }
+
+    .right-col{
+        grid-area: content;
+        padding: 0 10%;
+        text-align: left;
+        align-self: center;
+    }
+
+    img{
+        grid-area: bowl;
+        width: 100%;
+    }
+
+    h2{
+        margin: 0;
+    }
+
+    
+
+}
+
+.top{
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn{
+    from{
+      opacity: 0;
+      transform: translateY(-2em);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

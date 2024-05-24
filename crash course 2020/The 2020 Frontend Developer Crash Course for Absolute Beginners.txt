@@ -1,0 +1,306 @@
+Code Editor: VS code Editor
+
+plugin: live server
+
+look at the design
+
+HTML --> Hyper Text Markup Language
+HTML is the standard markup language for building layouts and websites. you build out "HTML Elements", which serve as the structure (or the skeleton) of your layouts. HTML without CSS is usually quite ugly, but it's required. You can't have flesh without bones!
+<head> Element
+-->The HTML <head> Element contains various HTML elements. These elements contain data about the HTML document itself. These include information about the page title, character set, CSS styles, scripts and other information.
+-->Most of your work does not usually take place in the <head> element.
+
+CSS --> Cascading Style Sheets
+->CSS is what you use to style your HTML elements. You can control the layout structure, colors, typography, alignment, animations and more.
+->CSS Consists of rulesets, selectors, properties and values.
+
+
+create a files for the project
+--> create index.html and use Emmet to create html structure
+--> create a css folder with file name main.css
+--> link css file with html file
+
+let code - HTML structure
+-> focus on hero-bg class for background of hero section
+-> inside hero-bg class we will have section
+    section with class of top --> 
+      1. header tag for logo
+      2. h1 tag for heading within h1 we have span for specific tag
+      3. p tag for body text
+      4. we will create a div with class name of form-container for the email
+          i. form tag 
+          ii. within form tag we will have 
+               a. label
+               b. input with type text
+               c. p for text
+               d. input with type button
+          iii. we will create a container with class name form-left for label, input and p tag for desktop 
+-> next we focus on section with class name of authentic which will have two elements on mobile and three element on desktop -->
+      1. we will have div with class right-col
+         i. h2 tag
+         ii. p tag
+      2. we will have img tag for the momo image
+
+let code some CSS
+-> import fonts for the html document in body with margin zero
+section
+  -> setting margin 0 at top-bottom and 1em unit left-right
+hero-bg
+ -> setting all properties on hero-bg div =>
+     1. setting background as image with value of url(..) no-repeat rgba(59, 56, 58, 0.6) with background-blend-mode: multiply;, background-position will be 50% 83%
+     2. text color white
+     3. make text center
+     4. give padding bottom 4em unit
+  -> setting all properties to header =>
+      1. giving padding of 1em unit top-bottom and 0 left-right
+      2. within header we have anchor tag => 
+         i. color will be white
+         ii. text-decoration will be none
+         iii. font-weight will be 700 and font-size will be 1.2rem unit
+  -> setting all properties to h1 =>
+      1. font-size will be 2.5rem unit
+      2. margin will be have value of 2em 0 1.2em
+      3. within h1 we have span tag -->
+         - text-transform will be uppercase
+         - display will be block
+         - font-size will be 1.5rem
+         - position will be relative
+         - z-index will be 1
+      4. adding graphic to the span element using pseduo class selectors
+           h1 span::before{
+                  content: '';
+                  width: 3em;
+                  height: .4em;
+                  background: #d5b82a;
+                  bottom: 8px;
+                  position: absolute;
+                  z-index: -1;
+                  margin-left: -.3em;
+            } 
+    -> setting all properties to p =>
+       1. font-weight will be 700;
+       2. margin will have value of [0 1em 3em]
+    -> setting all properties to the form-container =>
+        1. background-color will be white
+        2. margin will have value of [2em -1em 0]
+        3. padding will be 2em unit
+        4. with form-container we have following tag =>
+           i. label --> label{
+              color: #153743;
+              font-weight: 700;
+              display: block;
+              margin-bottom: 1em;
+              font-size: 1.2em;
+             }
+           ii. input with type text --> 
+               input[type=text]{
+                 border: 1px solid #707070;
+                 width: 100%;
+                 padding: 1em;
+                 border-radius: .5em;  
+                 margin-top: 1.2em;   
+                 box-sizing: border-box;
+                 }
+            iii. p within form-container -->
+                 .form-container p{
+                   color: gray;
+                   margin-bottom: 1.5em;
+                   font-weight: normal;
+                   font-size: .9em;
+                   margin-top: .3em;
+                 }
+            iv. input with type button -->
+                input[type=button]{
+                   background-color: #d5b82a; 
+                   border: none;
+                   width: 100%;
+                   color: var(--text-color);  
+                   font-weight: 700;
+                   padding: 1em 0;
+                   border-radius: .5em;
+                   font-size: 1.3em;
+                   cursor: pointer;
+                }
+            v. adding hover on the button -->
+                input[type=button]:hover{
+                   background-color: #db9410; 
+                }
+authentic
+ -> setting authentic class margin to zero
+ -> setting img width to 100%
+ -> within authentic class we have div with class name of right-col
+     .right-col{
+         text-align: center;
+         margin: 3em 1em;
+       }
+ -> setting h2 and h2 pseduo element
+     h2{
+        text-transform: uppercase;
+        position: relative;
+     }
+     h2::before{
+        content: '';
+        width: 8em;
+        height: .4em;
+        background: #E36B5E;
+        bottom: 8px;
+        position: absolute;
+        z-index: -1;
+        margin-left: -.3em;
+     }
+  -> setting properties to p tag 
+      p{
+        line-height: 2em;
+      }
+
+let create some media queries for different devices
+1. min-width of 730px
+   @media (min-width: 730px){
+    
+    section{
+        margin: 0 4em;
+    }
+
+    .form-container{
+        margin: 2em -4em 0;
+    }
+}
+2. min-width of 930px
+   @media (min-width: 930px){
+    
+    .hero-bg{
+        text-align: left;
+    }
+
+    .hero-bg p{
+        margin: 0 0 3em;
+    }
+
+    .hero-bg section{
+        width: 65%;
+    }
+
+    .form-container{
+        margin: 2em 0 0;
+        padding: 2em;
+        box-shadow: 10px 10px 10px rgba(124, 124, 124, 0.3);
+        border-radius: .5em;
+    }
+
+    form{
+        display: flex;
+    }
+
+    .form-left{
+        width: 70%;
+    }
+
+    label{
+        margin-bottom:0;
+    }
+
+    input[type=button]{
+        height: fit-content;
+        font-size: 1.1em;
+        margin-left: 1em;
+        margin-top: 2.7em;
+        padding: .7em 0;
+        width: 30%;
+    }
+
+    .hero-bg p{
+        margin-bottom: 0;
+    }
+
+    section.authentic{
+        display: grid;
+        grid-template-columns: repeat(2,50%);
+        grid-template-areas: "bowl content";
+    }
+
+    .right-col{
+        grid-area: content;
+        padding: 0 10%;
+        text-align: left;
+        align-self: center;
+    }
+
+    img{
+        grid-area: bowl;
+        width: 100%;
+    }
+
+    h2{
+        margin: 0;
+    }
+   }
+
+let work on css animations
+.top{
+    animation: fadeIn 2s forwards;
+}
+@keyframes fadeIn{
+    from{
+      opacity: 0;
+      transform: translateY(-2em);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+     
+let look at the javascript portion
+-> we have to create a onclick event on the button that add an overlay with text of "searching now ..." for few second 
+   <script>  
+        let btn = document.getElementById('cta-btn');
+        let overlay = document.getElementById('overlay');
+
+        btn.addEventListener('click', () => {
+           overlay.style.display = 'grid';
+           overlay.classList.add('animate-overlay')
+        })
+    </script>
+-> for we need id called cta-btn for button
+-> also we need some html and css for it -->
+   HTML
+    <div class="overlay" id="overlay">
+        <h3>Searching Now ...</h3>
+    </div>
+    CSS
+     .overlay{
+       position:absolute;
+       height: 100vh;
+       width: 100%;
+       background: rgba(0,0,0,.9);
+       color: var(--text-color);
+       z-index: 1;
+       place-content: center;
+       display: none;
+       opacity: 0;
+      }
+
+      .animate-overlay{
+        animation: overlay 3s forwards ;
+      }
+
+      @keyframes overlay{
+         0%{
+           opacity: 0;
+          }
+       30%{
+        opacity: 1;
+        }
+       70%{
+        opacity: 1;
+       }
+       100%{
+        opacity: 0;
+       }   
+      }
+
+
+
+#note: use Emmet for faster work
+
+Timestamp: 02:15:05
